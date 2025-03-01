@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Especialização</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Escolha seu Caminho na Programação!</h1>
+    <div class="container">
+        <p>Você deseja seguir para a área de:</p>
+        <button class="button" id="frontBtn" onclick="escolhaArea('Front-End', this)">Front-End</button>
+        <button class="button" id="backBtn" onclick="escolhaArea('Back-End', this)">Back-End</button>
+        <p id="resultArea" class="hidden texto"></p>
+
+        <div class="front hidden">
+            <p>Qual linguagem deseja aprender?</p>
+            <button class="button" id="frontL1" onclick="lingFront('Vue', this)">Vue</button>
+            <button class="button" id="frontL2" onclick="lingFront('React', this)">React</button>
+            <p id="resultFront" class="hidden texto"></p>
+        </div>
+
+        <div class="back hidden">
+            <p>Qual lingaguem deseja aprender?</p>
+            <button class="button" id="backL1" onclick="lingBack('C#', this)">C#</button>
+            <button class="button" id="backL2" onclick="lingBack('Java', this)">Java</button>
+            <p id="resultBack" class="hidden texto"></p>
+        </div>
+
+        <div class="especializacao hidden">
+            <p>Deseja se especializar ou tornar-se Fullstack?</p>
+            <button class="button" id="especializarBtn" onclick="spec('Especialização', this)">Especializar</button>
+            <button class="button" id="fullstackBtn" onclick="spec('Fullstack', this)">Fullstack</button>
+            <p id="resultEspecializar" class="hidden texto"></p>
+        </div>
+
+        <div class="tecnologias hidden">
+            <p>Quais são as tecnologias que você gostaria de conhecer?</p>
+            <input type="text" name="textotec" id="listaTecnologias" placeholder="Adicione até 3 opções.">
+            <button class="button" onclick="enviar()">Enviar</button>
+        </div>
+        <p id="resultFinal" class="hidden texto"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
