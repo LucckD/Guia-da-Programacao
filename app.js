@@ -6,7 +6,7 @@ const textoEspec = document.getElementById('resultEspecializar');
 const resultado = document.querySelector('#resultFinal');
 let campo = document.querySelector('input');
 let listaTecnologias = [];
-const apenasLetras = /^[^\d]+$/ //permite apenas
+const apenasLetras = /^[^\d]+$/ //permite apenas caracteres epeciais e letras.
 //início botões
 const frontBtn = document.querySelector('#frontBtn');
 const backBtn = document.querySelector('#backBtn');
@@ -100,11 +100,11 @@ function limparCampo() {
 }
 
 // Função para inserir tecnologias na área de resultados
-function inserirTecnologias(){
+function inserirTecnologias() {
     resultado.innerHTML = '';
-    if (listaTecnologias.length === 0){
+    if (listaTecnologias.length === 0) {
         resultado.innerHTML = "Nenhuma tecnologia adicionada.";
-    } else { 
+    } else {
         // Percorrer a lista e adicionar cada tecnologia na área de resultado
         listaTecnologias.forEach(tec => { // 'tec' representa cada item da lista
             let novaTec = document.createElement('div');
@@ -114,8 +114,6 @@ function inserirTecnologias(){
     }
 }
 
-
-// 
 function enviar() {
     // Verificação básica
     inputTexto = campo.value.trim();
@@ -123,6 +121,8 @@ function enviar() {
         alert('Insira algo.')
     } else if (!apenasLetras.test(inputTexto)) {
         alert('Por favor, insira apenas letras.')
+    } else if (listaTecnologias.includes(inputTexto)) {
+        alert('Você já adicionou esta tecnologia. Por favor, insira uma diferente.');
     } else {
         // Adiciona a tecnologia à lista
         listaTecnologias.push(inputTexto);
@@ -131,15 +131,15 @@ function enviar() {
     }
 }
 
+console.log('Não tive capacidade o suficiente, ainda, para unificar as funções lingFront e lingBack;');
+
 /*
 Futuras Melhorias:
 
-Trocar as fontes dos textos;
 Polir o código;
-Unir as funções lingFront e lingBack;
-Adicionar verificação de tecnologia repetida;
 Adicionar loop para que seja possível adicionar apenas três tecnologias;
 Adicionar interação com as 3 tecnologias descritas;
 Remover os comentários;
-Fazer o Git Oficial;
+Adicionar Readme;
+Fazer o Git Oficial.
 */
