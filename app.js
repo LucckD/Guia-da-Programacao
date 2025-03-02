@@ -114,7 +114,21 @@ function inserirTecnologias() {
     }
 }
 
-function enviar() {
+function mostrarMensagemEspecial() {
+    resultado.innerHTML += `<p class="mensagemEspecial">Que interessante as suas 3 tecnologias. Boa sorte!</p>`
+}
+
+function dispararConfete() {
+    const confete = document.createElement('div');
+    confete.classList.add('confete');
+    document.body.appendChild(confete);
+
+    setTimeout(() => {
+        confete.remove();
+    }, 3000);
+}
+
+function enviar(botao) {
     // Verificação básica
     inputTexto = campo.value.trim();
     if (inputTexto.length === 0) {
@@ -128,17 +142,23 @@ function enviar() {
         listaTecnologias.push(inputTexto);
         inserirTecnologias();
         limparCampo();
+
+        if (listaTecnologias.length === 3) {
+            mostrarMensagemEspecial();
+            dispararConfete();
+            campo.disabled = true;
+            campo.classList.add('hidden');
+            botao.classList.add('disabled');
+            botao.disabled = true;
+        }
     }
 }
-
 console.log('Não tive capacidade o suficiente, ainda, para unificar as funções lingFront e lingBack;');
 
 /*
 Futuras Melhorias:
 
 Polir o código;
-Adicionar loop para que seja possível adicionar apenas três tecnologias;
-Adicionar interação com as 3 tecnologias descritas;
 Remover os comentários;
 Adicionar Readme;
 Fazer o Git Oficial.

@@ -72,5 +72,31 @@ h1 {
 .tecnologia-item {
     padding: 10px;
     background-color: #282a36;
-    border-radius: 5px; /* Opcional: para bordas arredondadas */
+    border-radius: 5px; 
 }
+
+.mensagem-especial {
+    font-size: 1.5rem;
+    color: #ff3300;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.confete {
+    position: fixed;
+    top: -10px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    border-radius: 50%;
+    animation: cairConfete 2s ease-out forwards;
+}
+
+@keyframes cairConfete {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* confete feito com ajuda com Chat GPT */
