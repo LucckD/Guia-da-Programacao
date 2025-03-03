@@ -1,0 +1,41 @@
+# 7DaysOfCode - Desafio: Escolhas na Carreira de Programação
+
+## Descrição
+
+Este projeto foi desenvolvido como parte do desafio **7DaysOfCode**, que propõe a criação de um jogo interativo baseado em escolhas para simular caminhos possíveis dentro da carreira de programação.
+
+O jogo apresenta ao usuário uma série de decisões que determinam sua trajetória na área de tecnologia, utilizando estruturas de controle de fluxo em JavaScript, como `if` e `else`.
+
+## Funcionalidades
+
+1. O usuário escolhe entre seguir para a área de **Front-End** ou **Back-End**.
+2. Com base na escolha anterior:
+   - No **Front-End**, o usuário decide entre aprender **React** ou **Vue**.
+   - No **Back-End**, o usuário decide entre aprender **C#** ou **Java**.
+3. Independentemente da área escolhida, o usuário decide entre:
+   - Se especializar na área escolhida.
+   - Tornar-se **Fullstack**.
+4. Na fase final, o usuário pode inserir as tecnologias nas quais gostaria de se especializar ou conhecer. Não há uma opção de "Sim ou Não", ele apenas insere diretamente as tecnologias desejadas. Quando três tecnologias forem adicionadas, o jogo exibe uma mensagem especial e finaliza a interação.
+
+## Tecnologias Utilizadas
+
+- **HTML** para estrutura da página.
+- **CSS** para estilização da interface.
+- **JavaScript** para a lógica do jogo e interação com o usuário.
+
+## Como Jogar
+
+1. Acesse a página do jogo em: https://guia-da-programacao.vercel.app
+2. Escolha sua área de atuação (Front-End ou Back-End).
+3. Escolha uma tecnologia principal dentro da área selecionada.
+4. Escolha entre se especializar ou se tornar Fullstack.
+5. Insira até três tecnologias que deseja aprender.
+6. O jogo termina com uma mensagem especial ao atingir três tecnologias adicionadas.
+
+## Melhorias Futuras
+
+- Permitir ao usuário escolher se quer ou não adicionar tecnologias.
+- Permitir que o usuário reinicie o jogo sem precisar recarregar a página.
+
+Dsenvolvido por Carlos Eduardo🚀
+
