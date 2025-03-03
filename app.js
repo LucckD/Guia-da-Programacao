@@ -19,6 +19,13 @@ const fullstack = document.querySelector('#fullstackBtn');
 //fechamento botões
 //Final área de variáveis.
 
+//estiliza o botão após o clique
+function estilizarBotao(botao) {
+    botao.style.backgroundColor = "#ff3300";
+    botao.style.transform = "scale(1.15)";
+    botao.disabled = true;
+}
+
 function escolhaArea(area, botao) {
     if (area === "Front-End") {
         document.querySelector('.front').classList.remove('hidden');
@@ -33,45 +40,32 @@ function escolhaArea(area, botao) {
         textoArea.classList.remove('hidden');
         textoArea.innerHTML = "Eu adoro Back-End!";
     }
-    botao.style.backgroundColor = "#ff3300";
-    botao.style.transform = "scale(1.15)";
-    botao.disabled = true;
+    estilizarBotao(botao);
 }
 
-function lingFront(lang, botao) {
-    if (lang === "Vue") {
-        lingFront2.disabled = true;
-        lingFront2.classList.add('disabled');
-        textoFront.classList.remove('hidden');
-        textoFront.innerHTML = "Vue? Que interessante!";
-    } else {
-        lingFront1.disabled = true;
-        lingFront1.classList.add('disabled');
-        textoFront.classList.remove('hidden');
-        textoFront.innerHTML = "Com certeza é uma boa opção.";
-    }
-    document.querySelector('.especializacao').classList.remove('hidden');
-    botao.style.backgroundColor = "#ff3300";
-    botao.style.transform = "scale(1.15)";
-    botao.disabled = true;
-}
+function escolherLinguagem(tipo, linguagem, botao) {
 
-function lingBack(lang, botao) {
-    if (lang === "C#") {
-        lingBack2.disabled = true;
-        lingBack2.classList.add('disabled');
-        textoBack.classList.remove('hidden');
-        textoBack.innerHTML = "É difícil, mas você consegue.";
+    let elemento, textoElemento, mensagem;
+
+    if (tipo === 'Front') {
+        //elemento vai receber o botao que NAO foi clicado.
+        elemento = linguagem === 'Vue' ? lingFront2 : lingFront1;
+        textoElemento = textoFront;
+        mensagem = linguagem === 'Vue' ? "Vue? Que interessante!" : "Com certeza é uma boa opção.";
     } else {
-        lingBack1.disabled = true;
-        lingBack1.classList.add('disabled');
-        textoBack.classList.remove('hidden');
-        textoBack.innerHTML = "Java? Ok, isso é maneiro!";
+        elemento = linguagem === 'C#' ? lingBack2 : lingBack1;
+        textoElemento = textoBack;
+        mensagem = linguagem === 'C#' ? "É difícil, mas você consegue." : "Java? Ok, isso é maneiro!";
     }
+
+    elemento.disabled = true;
+    elemento.classList.add('disabled');
+
+    textoElemento.classList.remove('hidden');
+    textoElemento.innerHTML = mensagem;
     document.querySelector('.especializacao').classList.remove('hidden');
-    botao.style.backgroundColor = "#ff3300";
-    botao.style.transform = "scale(1.15)";
-    botao.disabled = true;
+
+    estilizarBotao(botao);
 }
 
 function spec(seg, botao) {
@@ -89,9 +83,7 @@ function spec(seg, botao) {
     document.querySelector('.tecnologias').classList.remove('hidden');
     resultado.classList.remove('hidden');
     inserirTecnologias();
-    botao.style.backgroundColor = "#ff3300";
-    botao.style.transform = "scale(1.15)";
-    botao.disabled = true;
+    estilizarBotao(botao);
 }
 
 function limparCampo() {
@@ -137,6 +129,7 @@ function enviar(botao) {
         alert('Por favor, insira apenas letras.')
     } else if (listaTecnologias.includes(inputTexto)) {
         alert('Você já adicionou esta tecnologia. Por favor, insira uma diferente.');
+        limparCampo();
     } else {
         // Adiciona a tecnologia à lista
         listaTecnologias.push(inputTexto);
@@ -153,13 +146,3 @@ function enviar(botao) {
         }
     }
 }
-console.log('Não tive capacidade o suficiente, ainda, para unificar as funções lingFront e lingBack;');
-
-/*
-Futuras Melhorias:
-
-Polir o código;
-Remover os comentários;
-Adicionar Readme;
-Fazer o Git Oficial.
-*/
